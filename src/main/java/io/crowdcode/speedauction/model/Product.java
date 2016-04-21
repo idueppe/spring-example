@@ -1,13 +1,14 @@
 package io.crowdcode.speedauction.model;
 
 import io.crowdcode.speedauction.commons.AbstractEntity;
+import io.crowdcode.speedauction.commons.Identifiable;
 
 import java.math.BigDecimal;
 
 /**
  * @author Ingo Düppe (Crowdcode)
  */
-public class Product<T extends Product> extends AbstractEntity<T, Long> {
+public class Product<T extends Product> extends AbstractEntity<T, Long> implements Identifiable<Long> {
 
     private String title;
     private BigDecimal minAmount;
