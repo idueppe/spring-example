@@ -5,6 +5,16 @@
 
 [![Build Status](https://travis-ci.org/idueppe/spring-example.svg?branch=master)](https://travis-ci.org/idueppe/spring-example)
 
+# Model
+
+Use-Case Diagram:
+
+![https://raw.githubusercontent.com/idueppe/spring-example/master/src/model/speedauction-usecase.png](https://raw.githubusercontent.com/idueppe/spring-example/master/src/model/speedauction-usecase.png)
+
+Class Diagram:
+
+![https://raw.githubusercontent.com/idueppe/spring-example/master/src/model/speedauction-model.png](https://raw.githubusercontent.com/idueppe/spring-example/master/src/model/speedauction-model.png)
+
 # License
 
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">
