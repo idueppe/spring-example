@@ -9,11 +9,11 @@
 
 Use-Case Diagram:
 
-![https://raw.githubusercontent.com/idueppe/spring-example/master/src/model/speedauction-usecase.png](https://raw.githubusercontent.com/idueppe/spring-example/master/src/model/speedauction-usecase.png)
+![https://raw.githubusercontent.com/idueppe/spring-example/master/doc/speedauction-usecase.png](https://raw.githubusercontent.com/idueppe/spring-example/master/doc/speedauction-usecase.png)
 
 Class Diagram:
 
-![https://raw.githubusercontent.com/idueppe/spring-example/master/src/model/speedauction-model.png](https://raw.githubusercontent.com/idueppe/spring-example/master/src/model/speedauction-model.png)
+![https://raw.githubusercontent.com/idueppe/spring-example/master/doc/speedauction-model.png](https://raw.githubusercontent.com/idueppe/spring-example/master/doc/speedauction-model.png)
 
 # License
 
