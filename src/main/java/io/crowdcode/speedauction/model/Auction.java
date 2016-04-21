@@ -15,6 +15,7 @@ public class Auction extends AbstractEntity<Auction, Long> {
     private LocalDateTime beginDate;
     private LocalDateTime expireDate;
 
+
     private Product product;
 
     private List<Bid> bids = new ArrayList<>();
