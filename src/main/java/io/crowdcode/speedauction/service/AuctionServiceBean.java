@@ -4,6 +4,7 @@ import io.crowdcode.speedauction.exception.AuctionNotFoundException;
 import io.crowdcode.speedauction.model.Auction;
 import io.crowdcode.speedauction.model.ProductDetail;
 import io.crowdcode.speedauction.repository.AuctionRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
@@ -15,6 +16,7 @@ import java.util.List;
 @Component
 public class AuctionServiceBean implements AuctionService {
 
+    @Autowired
     private AuctionRepository auctionRepository;
 
     @Override

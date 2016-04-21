@@ -2,6 +2,7 @@ package io.crowdcode.speedauction.repository.inmemory;
 
 import io.crowdcode.speedauction.model.Auction;
 import io.crowdcode.speedauction.repository.AuctionRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -13,6 +14,7 @@ import java.util.Optional;
 @Repository
 public class AuctionRepositoryInMemoryBean implements AuctionRepository {
 
+    @Autowired
     private InMemoryStore<Auction> store;
 
     @Override
