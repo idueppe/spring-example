@@ -3,6 +3,7 @@ package io.crowdcode.speedauction.repository.inmemory;
 import io.crowdcode.speedauction.commons.Identifiable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -14,6 +15,7 @@ import java.util.stream.Collectors;
 /**
  * @author Ingo Düppe (Crowdcode)
  */
+@Component
 public class InMemoryStore<T extends Identifiable<Long>> {
 
     private static final Logger log = LoggerFactory.getLogger(InMemoryStore.class);

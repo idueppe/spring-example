@@ -2,6 +2,7 @@ package io.crowdcode.speedauction.repository.inmemory;
 
 import io.crowdcode.speedauction.model.Auction;
 import io.crowdcode.speedauction.repository.AuctionRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
@@ -9,6 +10,7 @@ import java.util.Optional;
 /**
  * @author Ingo Düppe (Crowdcode)
  */
+@Repository
 public class AuctionRepositoryInMemoryBean implements AuctionRepository {
 
     private InMemoryStore<Auction> store;
