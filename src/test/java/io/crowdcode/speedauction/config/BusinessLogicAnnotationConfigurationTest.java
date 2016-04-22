@@ -10,6 +10,9 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.util.Arrays;
+
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 
 /**
@@ -32,14 +35,19 @@ public class BusinessLogicAnnotationConfigurationTest {
     private ApplicationContext applicationContext;
 
     @Test
-    public void testConfigTest() throws Exception {
+    public void testThatBeansExists() throws Exception {
         assertNotNull(inMemoryStore);
         assertNotNull(auctionService);
         assertNotNull(auctionRepository);
+    }
 
-        for (String beanName : applicationContext.getBeanDefinitionNames()) {
+    @Test
+    public void testThatOtherConfigurationNotLoaded() {
+        String[] beanNames = applicationContext.getBeanDefinitionNames();
+        for (String beanName : beanNames) {
             System.out.println("| " + beanName);
         }
+        assertFalse(Arrays.toString(beanNames).contains("businessLogicConfiguration"));
     }
 
 }
