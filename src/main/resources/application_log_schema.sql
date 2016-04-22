@@ -1,0 +1,7 @@
+DROP TABLE ApplicationLog;
+DROP SEQUENCE LogSequence;
+CREATE TABLE ApplicationLog (
+  id      BIGINT PRIMARY KEY NOT NULL,
+  message CHARACTER VARYING(255)
+);
+CREATE SEQUENCE LogSequence;
