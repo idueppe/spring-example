@@ -5,12 +5,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.BeanFactoryAware;
-import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * @author Ingo Düppe (Crowdcode)
  */
-public class DomainFactory implements BeanFactoryAware{
+public class DomainFactory implements BeanFactoryAware {
 
     private static final Logger log = LoggerFactory.getLogger(DomainFactory.class);
 
