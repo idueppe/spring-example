@@ -35,4 +35,8 @@ public class AuctionRepositoryInMemoryBean implements AuctionRepository {
     public void setStore(InMemoryStore<Auction> store) {
         this.store = store;
     }
+
+    public InMemoryStore<Auction> getStore() {
+        return store;
+    }
 }
