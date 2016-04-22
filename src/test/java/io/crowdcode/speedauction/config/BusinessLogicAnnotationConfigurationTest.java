@@ -16,7 +16,9 @@ import static org.junit.Assert.assertNotNull;
  * @author Ingo Düppe (Crowdcode)
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = BusinessLogicAnnotationConfiguration.class)
+@ContextConfiguration(
+//      locations = "classpath:uebung*.xml", Import of xml based configurations
+        classes = BusinessLogicAnnotationConfiguration.class)
 public class BusinessLogicAnnotationConfigurationTest {
 
     @Autowired
@@ -40,6 +42,8 @@ public class BusinessLogicAnnotationConfigurationTest {
         for (String beanName : applicationContext.getBeanDefinitionNames()) {
             System.out.println("| " + beanName);
         }
+
+        auctionService.findAllRunning();
     }
 
 }
