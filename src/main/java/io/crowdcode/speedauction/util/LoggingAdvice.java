@@ -18,7 +18,7 @@ public class LoggingAdvice {
 
     @Around("execution(* io.crowdcode.speedauction.*.*.*(..))")
     public Object basicLogging(ProceedingJoinPoint pjp) throws Throwable {
-        log.info(green("starting method {}"),pjp.toString());
+        log.info(green("starting method {}"), pjp.toString());
         // start stopwatch
         Object retVal = pjp.proceed();
         // stop stopwatch

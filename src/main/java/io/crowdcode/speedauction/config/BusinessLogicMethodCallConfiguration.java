@@ -9,7 +9,6 @@ import io.crowdcode.speedauction.service.AuctionService;
 import io.crowdcode.speedauction.service.AuctionServiceBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Scope;
 
 /**
  * @author Ingo Düppe (Crowdcode)

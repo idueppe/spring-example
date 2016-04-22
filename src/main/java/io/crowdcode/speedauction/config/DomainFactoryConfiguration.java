@@ -4,11 +4,9 @@ import io.crowdcode.speedauction.model.Auction;
 import io.crowdcode.speedauction.model.Bid;
 import io.crowdcode.speedauction.model.DomainFactory;
 import io.crowdcode.speedauction.model.ProductDetail;
-import io.crowdcode.speedauction.util.LoggingPostProcessor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
-import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.annotation.Scope;
 
 import java.math.BigDecimal;
