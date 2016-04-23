@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.core.io.ClassPathResource;
+import org.springframework.jdbc.datasource.init.DatabasePopulator;
 import org.springframework.jdbc.datasource.init.ResourceDatabasePopulator;
 
 import javax.sql.DataSource;
@@ -23,7 +24,7 @@ public class DatabasePopulateConfiguration {
     private static final String APPLICATIONLOG_SQL = "application_log_schema.sql";
 
     @Bean
-    public org.springframework.jdbc.datasource.init.DatabasePopulator databasePopulator(DataSource dataSource) {
+    public DatabasePopulator databasePopulator(DataSource dataSource) {
         log.info(" Populating Database ");
 
         ResourceDatabasePopulator populator = new ResourceDatabasePopulator();

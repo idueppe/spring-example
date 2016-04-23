@@ -7,6 +7,6 @@ import org.springframework.context.annotation.Import;
  * @author Ingo Düppe (Crowdcode)
  */
 @Configuration
-@Import({BusinessLogicAnnotationConfiguration.class, DataSourceConfiguration.class})
+@Import({BusinessLogicAnnotationConfiguration.class, DatabasePopulateConfiguration.class})
 public class LayerConfiguration {
 }
