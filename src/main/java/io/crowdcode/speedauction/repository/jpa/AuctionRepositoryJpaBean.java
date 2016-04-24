@@ -14,7 +14,7 @@ import java.util.Optional;
  * @author Ingo Düppe (Crowdcode)
  */
 @Repository
-@Profile("jpa")
+@Profile({"jpa"})
 public class AuctionRepositoryJpaBean implements AuctionRepository {
 
     @PersistenceContext
@@ -32,7 +32,8 @@ public class AuctionRepositoryJpaBean implements AuctionRepository {
     }
 
     @Override
-    public void save(Auction auction) {
+    public Auction save(Auction auction) {
         em.persist(auction);
+        return auction;
     }
 }

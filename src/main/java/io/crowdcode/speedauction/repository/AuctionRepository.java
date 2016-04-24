@@ -14,6 +14,6 @@ public interface AuctionRepository {
 
     List<Auction> findAll();
 
-    void save(Auction auction);
+    Auction save(Auction auction);
 
 }

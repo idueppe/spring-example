@@ -2,7 +2,9 @@ package io.crowdcode.speedauction.repository.inmemory;
 
 import io.crowdcode.speedauction.model.Auction;
 import io.crowdcode.speedauction.repository.AuctionRepository;
+import io.crowdcode.speedauction.util.DefaultInMemoryProfileCondition;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Conditional;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;
 
@@ -13,7 +15,7 @@ import java.util.Optional;
  * @author Ingo Düppe (Crowdcode)
  */
 @Repository
-@Profile("!jpa")
+@Conditional(DefaultInMemoryProfileCondition.class)
 public class AuctionRepositoryInMemoryBean implements AuctionRepository {
 
     @Autowired
@@ -30,8 +32,9 @@ public class AuctionRepositoryInMemoryBean implements AuctionRepository {
     }
 
     @Override
-    public void save(Auction auction) {
+    public Auction save(Auction auction) {
         store.save(auction);
+        return auction;
     }
 
     public InMemoryStore<Auction> getStore() {
