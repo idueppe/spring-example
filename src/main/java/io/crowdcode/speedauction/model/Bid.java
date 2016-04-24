@@ -2,11 +2,13 @@ package io.crowdcode.speedauction.model;
 
 import io.crowdcode.speedauction.commons.AbstractEntity;
 
+import javax.persistence.Entity;
 import java.math.BigDecimal;
 
 /**
  * @author Ingo Düppe (Crowdcode)
  */
+@Entity
 public class Bid extends AbstractEntity<Bid, Long> {
 
     private String email;

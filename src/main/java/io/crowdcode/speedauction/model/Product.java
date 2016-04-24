@@ -3,11 +3,16 @@ package io.crowdcode.speedauction.model;
 import io.crowdcode.speedauction.commons.AbstractEntity;
 import io.crowdcode.speedauction.commons.Identifiable;
 
+import javax.persistence.Entity;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import java.math.BigDecimal;
 
 /**
  * @author Ingo Düppe (Crowdcode)
  */
+@Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Product<T extends Product> extends AbstractEntity<T, Long> implements Identifiable<Long> {
 
     private String title;

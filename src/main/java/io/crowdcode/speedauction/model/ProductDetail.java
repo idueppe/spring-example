@@ -1,8 +1,11 @@
 package io.crowdcode.speedauction.model;
 
+import javax.persistence.Entity;
+
 /**
  * @author Ingo Düppe (Crowdcode)
  */
+@Entity
 public class ProductDetail extends Product<ProductDetail> {
 
     private String description;

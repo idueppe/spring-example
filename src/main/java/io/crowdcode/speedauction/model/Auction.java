@@ -1,7 +1,13 @@
 package io.crowdcode.speedauction.model;
 
 import io.crowdcode.speedauction.commons.AbstractEntity;
+import io.crowdcode.speedauction.commons.LocalDateTimePersistenceConverter;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Convert;
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,15 +15,22 @@ import java.util.List;
 /**
  * @author Ingo Düppe (Crowdcode)
  */
+@Entity
 public class Auction extends AbstractEntity<Auction, Long> {
 
     private String owner;
+
+    @Convert(converter = LocalDateTimePersistenceConverter.class)
     private LocalDateTime beginDate;
+
+    @Convert(converter = LocalDateTimePersistenceConverter.class)
     private LocalDateTime expireDate;
 
 
+    @OneToOne(cascade = CascadeType.ALL)
     private Product product;
 
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Bid> bids = new ArrayList<>();
 
     public String getOwner() {

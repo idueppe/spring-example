@@ -1,12 +1,18 @@
 package io.crowdcode.speedauction.commons;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 import java.io.Serializable;
 
 /**
  * @author Ingo Düppe (Crowdcode)
  */
+@MappedSuperclass
 public class AbstractEntity<T extends AbstractEntity, ID extends Serializable> implements Identifiable<ID> {
 
+    @Id
+    @GeneratedValue
     private ID id;
 
     @Override
