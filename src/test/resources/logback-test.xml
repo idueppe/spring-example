@@ -8,6 +8,7 @@
     </appender>
     <logger name="io.crowdcode" level="DEBUG" />
     <logger name="org.springframework" level="DEBUG" />
+    <logger name="org.springframework.jdbc.core" level="TRACE"/>
     <logger name="org.hibernate.SQL" level="DEBUG"/>
     <logger name="org.hibernate.type.descriptor" level="INFO"/>
     <logger name="org.hibernate.tool.hbm2ddl" level="INFO"/>
