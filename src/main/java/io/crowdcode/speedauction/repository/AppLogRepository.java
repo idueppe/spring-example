@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * @author Ingo Düppe (Crowdcode)
  */
-public interface ApplicationLogRepository {
+public interface AppLogRepository {
 
     void log(String message, LocalDateTime loggedAt, String username);
 

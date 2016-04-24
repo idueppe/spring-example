@@ -8,7 +8,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
-
 import javax.sql.DataSource;
 
 /**
@@ -46,5 +45,4 @@ public class DataSourceConfiguration {
         dataSource.setPassword(jdbcPassword);
         return dataSource;
     }
-
 }

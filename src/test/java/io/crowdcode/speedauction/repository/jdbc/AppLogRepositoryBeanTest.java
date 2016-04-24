@@ -1,8 +1,9 @@
 package io.crowdcode.speedauction.repository.jdbc;
 
-import io.crowdcode.speedauction.config.LayerConfiguration;
+import io.crowdcode.speedauction.config.AppLogConfiguration;
+import io.crowdcode.speedauction.config.JdbcTransactionConfiguration;
 import io.crowdcode.speedauction.model.Message;
-import io.crowdcode.speedauction.repository.ApplicationLogRepository;
+import io.crowdcode.speedauction.repository.AppLogRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,11 +23,11 @@ import static org.junit.Assert.assertThat;
  * @author Ingo Düppe (Crowdcode)
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = LayerConfiguration.class)
-public class ApplicationLogRepositoryBeanTest {
+@ContextConfiguration(classes = {AppLogConfiguration.class, JdbcTransactionConfiguration.class})
+public class AppLogRepositoryBeanTest {
 
     @Autowired
-    private ApplicationLogRepository logRepository;
+    private AppLogRepository logRepository;
 
     @Test
     public void testLog() throws Exception {

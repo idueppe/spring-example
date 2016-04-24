@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * @author Ingo Düppe (Crowdcode)
  */
-public interface ApplicationLogService {
+public interface AppLogService {
 
     void log(String message, Object... args);
 

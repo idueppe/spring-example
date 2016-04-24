@@ -1,7 +1,7 @@
 package io.crowdcode.speedauction.repository.jdbc;
 
 import io.crowdcode.speedauction.model.Message;
-import io.crowdcode.speedauction.repository.ApplicationLogRepository;
+import io.crowdcode.speedauction.repository.AppLogRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcDaoSupport;
@@ -17,10 +17,10 @@ import java.util.List;
  * @author Ingo Düppe (Crowdcode)
  */
 @Repository
-public class ApplicationLogRepositoryBean extends NamedParameterJdbcDaoSupport implements ApplicationLogRepository {
+public class AppLogRepositoryBean extends NamedParameterJdbcDaoSupport implements AppLogRepository {
 
-    public static final String INSERT_SQL = "INSERT INTO APPLICATION_LOG (id, message, createdAt, createdBy) VALUES (nextVal('logsequence'), :message, :createdAt, :createdBy)";
-    public static final String SELECT_BETWEEN_SQL = "SELECT id, message, createdAt, createdBy FROM APPLICATION_LOG WHERE createdAt BETWEEN :from and :to";
+    public static final String INSERT_SQL = "INSERT INTO AppLog (id, message, createdAt, createdBy) VALUES (nextVal('AppLogSequence'), :message, :createdAt, :createdBy)";
+    public static final String SELECT_BETWEEN_SQL = "SELECT id, message, createdAt, createdBy FROM AppLog WHERE createdAt BETWEEN :from and :to";
 
     @Autowired
     private DataSource dataSource;

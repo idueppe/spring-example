@@ -21,7 +21,7 @@ public class DatabasePopulateConfiguration {
 
     private static final Logger log = LoggerFactory.getLogger(DatabasePopulateConfiguration.class);
 
-    private static final String APPLICATIONLOG_SQL = "application_log_schema.sql";
+    private static final String APPLICATIONLOG_SQL = "applog_schema.sql";
 
     @Bean
     public DatabasePopulator databasePopulator(DataSource dataSource) {

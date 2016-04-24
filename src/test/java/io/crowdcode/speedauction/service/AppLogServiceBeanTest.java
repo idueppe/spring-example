@@ -1,11 +1,13 @@
 package io.crowdcode.speedauction.service;
 
-import io.crowdcode.speedauction.config.LayerConfiguration;
+import io.crowdcode.speedauction.config.AppLogConfiguration;
+import io.crowdcode.speedauction.config.JdbcTransactionConfiguration;
 import io.crowdcode.speedauction.model.Message;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.time.Duration;
@@ -22,16 +24,17 @@ import static org.junit.Assert.assertThat;
  */
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = LayerConfiguration.class)
-public class ApplicationLogServiceBeanTest {
+@ContextConfiguration(classes = {AppLogConfiguration.class, JdbcTransactionConfiguration.class} )
+public class AppLogServiceBeanTest {
 
     @Autowired
-    private ApplicationLogService applicationLogService;
+    private AppLogService appLogService;
 
     @Test
+    @Sql(statements = "DELETE FROM AppLog")
     public void testApplicationLogging() throws Exception {
-        applicationLogService.log("JUNIT TEST %s", "LOG");
-        List<Message> messages = applicationLogService
+        appLogService.log("JUNIT TEST %s", "LOG");
+        List<Message> messages = appLogService
                 .lastLogs(Duration.of(5, ChronoUnit.SECONDS));
 
         messages.forEach(System.out::println);

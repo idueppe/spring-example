@@ -12,8 +12,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  * @author Ingo Düppe (Crowdcode)
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = AdviceConfiguration.class)
-public class AdviceConfigurationTest {
+@ContextConfiguration(classes = {AppLogConfiguration.class, BusinessLogicAnnotationConfiguration.class})
+public class AppLogConfigurationTest {
 
     @Autowired
     private AuctionService auctionService;
@@ -22,7 +22,7 @@ public class AdviceConfigurationTest {
     private ApplicationContext applicationContext;
 
     @Test
-    public void testAdivce() throws Exception {
+    public void testAdvice() throws Exception {
         auctionService.findAllRunning();
     }
 

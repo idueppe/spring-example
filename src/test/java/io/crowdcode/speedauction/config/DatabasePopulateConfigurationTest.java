@@ -22,17 +22,17 @@ import static org.hamcrest.Matchers.is;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {DatabasePopulateConfiguration.class})
-public class DataSourceConfigurationTest {
+public class DatabasePopulateConfigurationTest {
 
-    private static final String INSERT_ONE = "INSERT INTO APPLICATION_LOG (id, message, createdAt, createdBy) VALUES (nextVal('logsequence'), :message, :createdAt, :createdBy)";
-    private static final String SELECT_ONE = "SELECT message FROM Application_Log WHERE id=:id";
-    private static final String SELECT_ALL = "SELECT message FROM Application_Log";
+    private static final String INSERT_ONE = "INSERT INTO APPLOG (id, message, createdAt, createdBy) VALUES (nextVal('AppLogSequence'), :message, :createdAt, :createdBy)";
+    private static final String SELECT_ONE = "SELECT message FROM AppLog WHERE id=:id";
+    private static final String SELECT_ALL = "SELECT message FROM AppLog";
 
     @Autowired
     private DataSource dataSource;
 
     @Test
-    @Repeat(5)
+    @Repeat(3)
     public void testJdbcTemplate() throws Exception {
         NamedParameterJdbcTemplate jdbcTemplate = new NamedParameterJdbcTemplate(dataSource);
 
