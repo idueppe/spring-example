@@ -33,7 +33,7 @@ public class AppLogRepositoryBeanTest {
     public void testLog() throws Exception {
         logRepository.log("UNITTEST", LocalDateTime.now(), "UNITTEST");
 
-        List<Message> logs = logRepository.findLogs(LocalDateTime.now().minus(10, ChronoUnit.SECONDS), LocalDateTime.now().plus(10, ChronoUnit.SECONDS));
+        List<Message> logs = logRepository.findLogs(LocalDateTime.now().minus(10, ChronoUnit.SECONDS), LocalDateTime.now());
 
         assertThat(logs, contains(hasProperty("message", is("UNITTEST"))));
     }
