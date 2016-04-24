@@ -31,7 +31,7 @@ public class AppLogRepositoryBeanTest {
     private AppLogRepository logRepository;
 
     @Test
-    @Sql("DELETE FROM AppLog")
+    @Sql(statements = "DELETE FROM AppLog")
     public void testLog() throws Exception {
         logRepository.log("UNITTEST", LocalDateTime.now(), "UNITTEST");
 
