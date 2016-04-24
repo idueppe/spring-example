@@ -8,6 +8,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.time.LocalDateTime;
@@ -30,6 +31,7 @@ public class AppLogRepositoryBeanTest {
     private AppLogRepository logRepository;
 
     @Test
+    @Sql("DELETE FROM AppLog")
     public void testLog() throws Exception {
         logRepository.log("UNITTEST", LocalDateTime.now(), "UNITTEST");
 
