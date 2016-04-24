@@ -29,6 +29,6 @@ public class AnsiColor {
     }
 
     public static String red(String text) {
-        return ANSI_RED + text + ANSI_RED;
+        return ANSI_RED + text + ANSI_RESET;
     }
 }
