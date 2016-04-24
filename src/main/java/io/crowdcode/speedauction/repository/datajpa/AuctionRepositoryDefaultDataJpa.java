@@ -8,5 +8,5 @@ import org.springframework.stereotype.Repository;
  * @author Ingo Düppe (Crowdcode)
  */
 @Repository
-public interface AuctionRepositoryDataJpa extends JpaRepository<Auction, Long> {
+public interface AuctionRepositoryDefaultDataJpa extends JpaRepository<Auction, Long> {
 }

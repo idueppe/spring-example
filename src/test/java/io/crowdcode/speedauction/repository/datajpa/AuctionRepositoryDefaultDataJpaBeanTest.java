@@ -18,10 +18,10 @@ import static org.junit.Assert.assertNotNull;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = DataJpaRepositoryConfiguration.class)
 @Transactional
-public class AuctionRepositoryDataJpaBeanTest {
+public class AuctionRepositoryDefaultDataJpaBeanTest {
 
     @Autowired
-    private AuctionRepositoryDataJpa auctionRepository;
+    private AuctionRepositoryDefaultDataJpa auctionRepository;
 
     @Test
     public void testCreateAAuction() throws Exception {
