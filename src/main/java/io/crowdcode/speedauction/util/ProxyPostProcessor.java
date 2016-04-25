@@ -9,6 +9,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -70,6 +72,11 @@ public class ProxyPostProcessor implements BeanPostProcessor {
         @Override
         public Auction findAuction(Long auctionId) throws AuctionNotFoundException {
             return target.findAuction(auctionId);
+        }
+
+        @Override
+        public Page<Auction> findAll(Pageable pageable) {
+            return target.findAll(pageable);
         }
 
         @Override

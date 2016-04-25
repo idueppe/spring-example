@@ -3,6 +3,9 @@ package io.crowdcode.speedauction.repository.jpa;
 import io.crowdcode.speedauction.model.Auction;
 import io.crowdcode.speedauction.repository.AuctionRepository;
 import org.springframework.context.annotation.Profile;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
@@ -35,5 +38,10 @@ public class AuctionRepositoryJpaBean implements AuctionRepository {
     public Auction save(Auction auction) {
         em.persist(auction);
         return auction;
+    }
+
+    @Override
+    public Page<Auction> findAll(Pageable pageable) {
+        return new PageImpl<>(findAll());
     }
 }

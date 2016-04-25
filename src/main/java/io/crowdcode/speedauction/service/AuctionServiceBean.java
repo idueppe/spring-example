@@ -5,6 +5,8 @@ import io.crowdcode.speedauction.model.Auction;
 import io.crowdcode.speedauction.model.ProductDetail;
 import io.crowdcode.speedauction.repository.AuctionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
@@ -43,6 +45,11 @@ public class AuctionServiceBean implements AuctionService {
         return auctionRepository
                 .find(auctionId)
                 .orElseThrow(() -> new AuctionNotFoundException(auctionId));
+    }
+
+    @Override
+    public Page<Auction> findAll(Pageable pageable) {
+        return auctionRepository.findAll(pageable);
     }
 
     public void setAuctionRepository(AuctionRepository auctionRepository) {
