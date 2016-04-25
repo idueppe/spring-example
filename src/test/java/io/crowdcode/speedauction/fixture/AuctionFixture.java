@@ -14,6 +14,18 @@ import java.util.Arrays;
  */
 public class AuctionFixture {
 
+    public static Auction createTestAuction(String title, int amount) {
+        return buildAuction()
+                .withProduct(
+                        new ProductDetail().withDescription("description")
+                                .withMinAmount(BigDecimal.ONE)
+                                .withTitle(title))
+                .withBids(Arrays.asList(
+                        new Bid()
+                                .withAmount(BigDecimal.valueOf(amount))
+                                .withEmail("kontakt@crowdcode.io")));
+    }
+
     public static Auction buildDefaultAuction() {
         return buildAuction()
                 .withProduct(buildProductDetail())
